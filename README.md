@@ -1,27 +1,49 @@
+
+# 💻 Tech Stack:
+![Bash Script](https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+
+---
+
+
 # Project
  
-Prints a label for load average.
+## Prints a label for load average.
+```bash  
 1. uptime | awk -F'load average:' '{print $2}':
    Displays load averages for 1, 5, and 15 minutes by extracting values from the uptime command output.
-	
+```
+
+```bash  	
 2. echo -e "\nLogged In Users:" :
    Prints a label for displaying logged-in users.
-	
+```
+
+```bash  	
 3. who:
    Displays currently logged-in users and session details.
+```
 
+```bash
 4. echo -e "\nFailed Login Attempts (Last 5):":
    Prints a label for failed login attempts.
-	
+```
+
+```bash
 5. grep "Failed password" /var/log/auth.log | tail -n 5:
     Retrieves the last 5 failed login attempts from the authentication log (/var/log/auth.log).
+```
 
+```bash
 6. echo -e "\nTotal CPU Usage:":
     Prints a label for CPU usage.
+```
 
+```bash
 7. top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"% CPU used"}':
     Retrieves and calculates the total CPU usage by getting idle time from top output and subtracting it from 100%.
-	
+```
+
+
 8. echo -e "\nTotal Memory Usage:" :
     Prints a label for memory usage.
 	
